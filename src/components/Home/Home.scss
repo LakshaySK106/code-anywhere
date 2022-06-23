@@ -1,0 +1,92 @@
+.homePageWrapper {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color: #4e4a85;
+   height: 100vh;
+}
+
+.formWrapper {
+   background: #181818;
+   padding: 20px;
+   border-radius: 10px;
+   width: 400px;
+   max-width: 90%;
+}
+
+footer {
+   position: fixed;
+   bottom: 0;
+}
+
+footer a {
+   color: #4e4a85;
+}
+
+.inputGroup {
+   display: flex;
+   flex-direction: column;
+}
+
+.mainLabel {
+   margin-bottom: 20px;
+   margin-top: 0;
+}
+
+.homePageLogo {
+   height: 80px;
+   margin-bottom: 30px;
+}
+
+.inputBox {
+   padding: 10px;
+   outline: none;
+   border: none;
+   margin-bottom: 5px;
+   background: #4e4a85;
+   font-size: 12px;
+   // font-weight: bold;
+}
+
+.btn {
+   border: none;
+   margin-top: 4px;
+   padding: 8px 10px;
+   border: 1px solid #4e4a85;
+   background: 0 0;  
+   color: #4e4a85;
+   font-size: 11.5px;
+   cursor: pointer;
+   letter-spacing: 3px;
+   // transition: all 0.3s ease-in-out;
+}
+
+.joinBtn,
+.leaveBtn {
+   width: 85px;
+   margin-left: auto;
+}
+
+.joinBtn:hover,
+.leaveBtn:hover {
+   background: #4e4a85;
+   color: #181818;
+}
+
+.createInfo {
+   margin: 0 auto;
+   margin-top: 20px;
+}
+
+.createNewBtn {
+   color: #4e4a85;
+   text-decoration: none;
+   border-bottom: 1px solid #4e4a85;
+   transition: all 0.3s ease-in-out;
+}
+
+.createNewBtn:hover,
+footer a:hover {
+   color: #4e4a85;
+   border-color: #4e4a85;
+}

@@ -1,0 +1,62 @@
+.mainWrap {
+   display: grid;
+   grid-template-columns: 210px 1fr;
+   grid-template-rows: 600px;
+
+}
+
+.aside {
+   background-color: #181818;
+   // padding: 15px;
+   padding-left: 15px;
+   padding-right: 15px;
+   color: #4e4a85;
+   display: flex;
+   flex-direction: column;
+   height: 100vh;
+}
+
+.asideInner {
+   flex: 1;
+}
+
+.clientsList {
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+   gap: 20px;
+}
+
+.client {
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   // font-weight: bold;
+}
+
+.userName {
+   margin-top: 2px;
+}
+
+.logo {
+   border-bottom: 1px solid #424242;
+   padding-bottom: 10px;
+   margin-top: 15px;
+}
+
+// .logoImage {
+//    height: 60px;
+// }
+
+.leaveBtn {
+   width: 100%;
+   margin-top: 10px;
+   margin-bottom: 15px;
+   padding: 8px 10px;   
+   border: 1px solid #4e4a85;
+   background: 0 0;
+   color: #4e4a85;
+      font-size: 11.5px;
+      cursor: pointer;
+      letter-spacing: 3px;
+}
