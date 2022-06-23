@@ -6,7 +6,16 @@ const ACTIONS = require('./src/components/Actions');
 const { Server } = require('socket.io');
 
 const server = http.createServer(app);
-const io = new Server(server);
+const io = new Server(server,{
+   cors:{
+      origin:[
+         "http://localhost:3000/",
+         "http://admin.socket.io/",
+         "https://code-anywhere.netlify.app/",
+      ],
+      methods:["GET","POST"],
+   },
+});
 
 app.use(express.static('build'));
 
