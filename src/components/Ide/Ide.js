@@ -3,8 +3,9 @@ import Client from '../Client/Client';
 import Editor from '../Editor/Editor';
 import './Ide.scss';
 import toast from 'react-hot-toast';
-import { initSocket } from '../../socket';
-import ACTIONS from '../../Actions';
+import { initSocket } from '../socket';
+import ACTIONS from '../Actions';
+import logo from '../logo/logoLL.png';
 import {
   useLocation,
   useNavigate,
@@ -17,7 +18,7 @@ const Ide = () => {
   const socketRef = useRef(null);
   const codeRef = useRef(null);
   const reactNavigator = useNavigate();
-  const { roomId } = useParams();
+  const { meetingId } = useParams();
 
   const [clients, setClients] = useState([])
 
@@ -33,7 +34,7 @@ const Ide = () => {
       }
 
       socketRef.current.emit(ACTIONS.JOIN, {
-        roomId,
+        meetingId,
         username: location.state?.username,
       });
 
@@ -71,12 +72,12 @@ const Ide = () => {
     };
   }, []);
 
-  async function copyRoomId() {
+  async function copymeetingId() {
     try {
-      await navigator.clipboard.writeText(roomId);
+      await navigator.clipboard.writeText(meetingId);
       toast.success('Room ID has been copied to your clipboard');
     } catch (err) {
-      toast.error('Could not copy the Room ID');
+      toast.error("Couldn't copy the Room ID");
     }
   }
 
@@ -96,11 +97,11 @@ const Ide = () => {
           <div className="logo">
             <img
               className="logoImage"
-              src="/code-sync.png"
-              alt="logo" b
+              src={logo}
+              alt="logo"
             />
           </div>
-          <h3>Connected</h3>
+          <p className='people'>Connected people</p>
           <div className="clientsList">
             {clients.map((client) => (
               <Client
@@ -110,17 +111,17 @@ const Ide = () => {
             ))}
           </div>
         </div>
-        <button className="btn copyBtn" onClick={copyRoomId}>
-          Copy ROOM ID
+        <button className="btn copyBtn" onClick={copymeetingId}>
+          COPY MEETING ID
         </button>
         <button className="leaveBtn" onClick={leaveRoom}>
-          Leave
+          LEAVE
         </button>
       </div>
       <div className="editorWrap">
         <Editor 
         socketRef={socketRef}
-          roomId={roomId}
+          meetingId={meetingId}
           onCodeChange={(code) => {
             codeRef.current = code;
           }}

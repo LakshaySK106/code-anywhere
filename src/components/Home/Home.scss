@@ -6,10 +6,27 @@
    height: 100vh;
 }
 
+.hom{
+   height: 0px;
+}
+.homImage{
+   height: 45px;
+   margin-left: 20px;
+   margin-top: 20px;
+}
+
+.textHome{
+   position: absolute;
+   font-size: 20px;
+   margin-left: 13px;
+   margin-top: 25px;
+   color: #a6a6a6;
+}
+
 .formWrapper {
    background: #181818;
    padding: 20px;
-   border-radius: 10px;
+   border-radius: 5px;
    width: 400px;
    max-width: 90%;
 }
@@ -17,10 +34,12 @@
 footer {
    position: fixed;
    bottom: 0;
+   font-size: 14px;
 }
-
 footer a {
-   color: #4e4a85;
+   color: #a6a6a6;
+   text-decoration: none;
+   border-bottom: 1px solid #a6a6a6;
 }
 
 .inputGroup {
@@ -28,14 +47,18 @@ footer a {
    flex-direction: column;
 }
 
-.mainLabel {
-   margin-bottom: 20px;
-   margin-top: 0;
+.ok{
+   margin-bottom: 30px;
+   margin-top: -5px;
+   font-size: 13px;
+   color: #a6a6a6;
+   font-family:sans-serif;
+   letter-spacing: 2px;
 }
 
 .homePageLogo {
-   height: 80px;
-   margin-bottom: 30px;
+   height: 100px;
+   margin-bottom: 15px;
 }
 
 .inputBox {
@@ -44,8 +67,8 @@ footer a {
    border: none;
    margin-bottom: 5px;
    background: #4e4a85;
-   font-size: 12px;
-   // font-weight: bold;
+   font-size: 13px;
+   color: #181818;
 }
 
 .btn {
@@ -53,12 +76,12 @@ footer a {
    margin-top: 4px;
    padding: 8px 10px;
    border: 1px solid #4e4a85;
+   font-family: sans-serif;
    background: 0 0;  
    color: #4e4a85;
    font-size: 11.5px;
    cursor: pointer;
    letter-spacing: 3px;
-   // transition: all 0.3s ease-in-out;
 }
 
 .joinBtn,
@@ -71,22 +94,24 @@ footer a {
 .leaveBtn:hover {
    background: #4e4a85;
    color: #181818;
+   transition: all 0.3s ease-in-out;
 }
 
 .createInfo {
+   font-size: 13px;
    margin: 0 auto;
    margin-top: 20px;
 }
 
 .createNewBtn {
-   color: #4e4a85;
+   color: #a6a6a6;
    text-decoration: none;
-   border-bottom: 1px solid #4e4a85;
-   transition: all 0.3s ease-in-out;
+   border-bottom: 1px solid #a6a6a6;
 }
 
 .createNewBtn:hover,
 footer a:hover {
    color: #4e4a85;
    border-color: #4e4a85;
+   transition: all 0.3s ease-in-out;
 }

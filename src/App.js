@@ -14,10 +14,11 @@ function App() {
             success: {
               style: {
                 background: '0',
-                border: '1px solid #4e4a85',
-                borderRadius: '3px',
-                color: '#4e4a85',
+                border: '1px solid #a6a6a6',
+                borderRadius: '2px',
+                color: '#a6a6a6',
                 fontSize: '13px',
+                padding: '4px',
                 letterSpacing: '1px',
               },
             },
@@ -26,7 +27,7 @@ function App() {
       </div>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/ide/:roomId" element={<Ide />} />
+        <Route path="/ide/:meetingId" element={<Ide />} />
       </Routes>
     </>
   );

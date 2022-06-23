@@ -2,26 +2,28 @@ import React, { useState } from 'react';
 import { v4 as uuidV4 } from 'uuid';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
+import logo from '../../components/logo/logoL.png';
+import logoH from '../../components/logo/logoH.png';
 import './Home.scss'
 
 const Home = () => {
   const navigate = useNavigate();
 
-  const [roomId, setRoomId] = useState('');
+  const [meetingId, setMeetingId] = useState('');
   const [username, setUsername] = useState('');
   const createNewRoom = (e) => {
     e.preventDefault();
     const id = uuidV4();
-    setRoomId(id);
+    setMeetingId(id);
     toast.success('A new room has been created!');
   };  
 
   const joinRoom = () => {
-    if (!roomId && !username) {
+    if (!meetingId && !username) {
       toast.error('Room ID and Username is required');
       return;
     }
-    if (!roomId) {
+    if (!meetingId) {
       toast.error('Room ID is required');
       return;
     }
@@ -29,12 +31,14 @@ const Home = () => {
       toast.error('Username is required');
       return;
     }
-    
-    navigate(`/ide/${roomId}`, {
-      state: {
-        username,
-      },
-    });
+    if(meetingId && username){
+      toast.success('You have joined the room');
+      navigate(`/ide/${meetingId}`, {
+        state: {
+          username,
+        },
+      });
+    }
   };
 
   const handleInputEnter = (e) => {
@@ -43,21 +47,26 @@ const Home = () => {
     }
   };
   return (
+    <>
+      <div className="hom">
+        <img className='homImage' src={logoH} alt="CodeAnywhere" />
+      <span className='textHome'>| Secure Code Editor for everyone</span>
+      </div>
     <div className="homePageWrapper">
       <div className="formWrapper">
         <img
           className="homePageLogo"
-          src="/code-sync.png"
-          alt="code-sync-logo"
+          src={logo}
+          alt="CodeAnywhere"
         />
-        <h4 className="mainLabel">Paste invitation ROOM ID</h4>
+        <p className="ok">Connect / Collaborate / Code from anywhere with CodeAnywhere</p>
         <div className="inputGroup">
           <input
             type="text"
             className="inputBox"
-            placeholder="Room ID"
-            onChange={(e) => setRoomId(e.target.value)}
-            value={roomId}
+            placeholder="Meeting ID"
+            onChange={(e) => setMeetingId(e.target.value)}
+            value={meetingId}
             onKeyUp={handleInputEnter}
           />
           <input
@@ -72,24 +81,25 @@ const Home = () => {
             JOIN
           </button>
           <span className="createInfo">
-            If you don't have an invite then create &nbsp;
+            Don't have ID?&nbsp;
             <a
               onClick={createNewRoom}
-              href=""
+              href="#"
               className="createNewBtn"
             >
-              new room
+             Let's start a new meeting
             </a>
           </span>
         </div>
       </div>
       <footer>
-        <h4>
-          Built with 💛 &nbsp; by &nbsp;
-          <a href="https://github.com/codersgyan">Coder's Gyan</a>
-        </h4>
+        <p className='okk'>
+          <a href="https://github.com/LakshaySK106" target='_blank'>Learn more</a>
+          &nbsp;about CodeAnyWhere
+        </p>
       </footer>
     </div>
+  </>
   );
 };
 

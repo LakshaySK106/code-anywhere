@@ -7,7 +7,6 @@
 
 .aside {
    background-color: #181818;
-   // padding: 15px;
    padding-left: 15px;
    padding-right: 15px;
    color: #4e4a85;
@@ -24,31 +23,30 @@
    display: flex;
    align-items: center;
    flex-wrap: wrap;
-   gap: 20px;
+   gap: 30px;
+   justify-content: center;
 }
 
-.client {
-   display: flex;
-   align-items: center;
-   flex-direction: column;
-   // font-weight: bold;
+.people{
+   color: #a6a6a6;
 }
-
-.userName {
-   margin-top: 2px;
-}
-
 .logo {
-   border-bottom: 1px solid #424242;
-   padding-bottom: 10px;
-   margin-top: 15px;
+   border-bottom: 1px solid #a6a6a6;
+   padding-bottom: 8px;
+   margin-top: 10px;
 }
 
-// .logoImage {
-//    height: 60px;
-// }
+.logoImage {
+   height: 53px;
+}
 
-.leaveBtn {
+.copyBtn:hover{
+   background: #4e4a85;
+   color: #181818;
+   transition: all 0.3s ease-in-out;
+}
+
+.leaveBtn{
    width: 100%;
    margin-top: 10px;
    margin-bottom: 15px;

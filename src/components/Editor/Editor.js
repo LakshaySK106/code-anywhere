@@ -2,13 +2,13 @@ import React, { useEffect, useRef } from 'react'
 import Codemirror from 'codemirror';
 import 'codemirror/mode/javascript/javascript';
 import 'codemirror/lib/codemirror.css'
-import 'codemirror/theme/dracula.css';
+import 'codemirror/theme/darcula.css';
 import 'codemirror/addon/edit/closetag';
 import 'codemirror/addon/edit/closebrackets';
-import ACTIONS from '../../Actions';
+import ACTIONS from '../Actions';
 import './Editor.scss';
 
-const Editor = ({ socketRef, roomId, onCodeChange }) => {
+const Editor = ({ socketRef, meetingId, onCodeChange }) => {
    const editorRef = useRef(null);
    useEffect(() => {
       async function init() {
@@ -16,10 +16,12 @@ const Editor = ({ socketRef, roomId, onCodeChange }) => {
             document.getElementById('realtimeEditor'),
             {
                mode: 'javascript',
-               theme: 'dracula',
+               theme: 'darcula',
                autoCloseTags: true,
                autoCloseBrackets: true,
                lineNumbers: true,
+               lineWrapping: true,
+               matchBrackets: true,
             });
 
          editorRef.current.on('change', (instance, changes) => {
@@ -28,7 +30,7 @@ const Editor = ({ socketRef, roomId, onCodeChange }) => {
             onCodeChange(code);
             if (origin !== 'setValue') {
                socketRef.current.emit(ACTIONS.CODE_CHANGE, {
-                  roomId,
+                  meetingId,
                   code,
                });
             }
