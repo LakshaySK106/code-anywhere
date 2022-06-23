@@ -22,6 +22,17 @@ function App() {
                 letterSpacing: '1px',
               },
             },
+            error: {
+              style: {
+                background: '0',
+                border: '1px solid #a6a6a6',
+                borderRadius: '2px',
+                color: '#a6a6a6',
+                fontSize: '13px',
+                padding: '4px',
+                letterSpacing: '1px',
+              },
+            },
           }}>
         </Toaster>
       </div>
