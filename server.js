@@ -6,7 +6,6 @@ const { Server } = require('socket.io');
 
 const server = http.createServer(app);
 const io = new Server(server);
-
 // app.use(express.static('build'));
 
 const userSocketMap = {};
