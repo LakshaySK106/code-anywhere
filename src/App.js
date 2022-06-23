@@ -1,8 +1,8 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import { Toaster } from 'react-hot-toast';
 import Home from "./components/Home/Home";
 import Ide from "./components/Ide/Ide";
-import { Toaster } from 'react-hot-toast';
 import './App.scss';
 
 function App() {
